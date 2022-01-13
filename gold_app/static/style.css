@@ -1,0 +1,48 @@
+#wrapper {
+    background-color: chartreuse;
+    padding: 20px;
+}
+.locationbox {
+    height: 150px;
+    width: 150px;
+    background-color: violet;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+#title {
+    width: ;
+}
+h1 {
+    text-align: center;
+}
+
+.button {
+    background-color: gold;
+}
+#activity {
+    width: 600px;
+    border: solid black 2px;
+    background-color: khaki;
+
+}
+#navbar {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#navbar p {
+    display: inline-block;
+    margin: 5px;
+}
+
+#navbar button {
+    display: inline-block;
+    margin: 5px;
+
+}
+
+#content {
+    background-color: chartreuse;
+    width: 100%;
+}

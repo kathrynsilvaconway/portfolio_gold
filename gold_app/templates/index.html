@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = en>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gold Quest</title>
+    {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <div id="wrapper">
+        <h1 id="heading">Gold Quest</h1>
+        <div id='navbar'>
+            <p>Your Gold: {{request.session.gold}}</p>
+            <form action="/reset" method="POST">
+                {% csrf_token %}
+                <button class="button">New Game</button>
+            </form>
+        </div>
+        <div id='container'>
+            <form class="locationbox" action="/process_money" method="POST">
+                {% csrf_token %}
+                <h3>Farm</h3>
+                <p>(earn 10-20 gold)</p>
+                <input type="hidden" name="location" value="farm">
+                <button class="button">Find Gold!</button>
+            </form>
+            <form class="locationbox" action="/process_money" method="POST">
+                {% csrf_token %}
+                <h3>Cave</h3>
+                <p>(earn 5-10 gold)</p>
+                <input type="hidden" name="location" value="cave">
+                <button class="button">Find Gold!</button>
+            </form>
+            <form class="locationbox" action="/process_money" method="POST">
+                {% csrf_token %}
+                <h3>House</h3>
+                <p>(earn 2-5 gold)</p>
+                <input type="hidden" name="location" value="house">
+                <button class="button">Find Gold!</button>
+            </form>
+            <form class="locationbox" action="/process_money" method="POST">
+                {% csrf_token %}
+                <h3>Casino</h3>
+                <p>(needs 0-50 gold)</p>
+                <input type="hidden" name="location" value="casino">
+                <button class="button">Find Gold!</button>    
+            </form>
+            <p>Activities:{{request.session.activities}}</p>
+            <div id="activity">
+                {% for activity in history %}
+                <p>{{activity}}.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
